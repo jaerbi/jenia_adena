@@ -27,7 +27,7 @@ h1 span {
 	font-size: .8em;
 }
 
-main {
+.main {
 	margin: 0 auto;
 	background: rgba(255, 255, 255, .85);
 	width: 600px;
