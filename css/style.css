@@ -5,10 +5,70 @@ body {
 	font-size: 1.4em;
 }
 
+.blood {
+	position: relative;
+}
+
+.egg1, .egg2, .egg3 {
+	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: blood_anim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes blood_anim {
+    from {background: #FF0000;
+    	opacity: .8;
+    }
+    to {background: #FFA600;
+    	opacity: .4;
+    }
+}
+
+/* Standard syntax */
+@keyframes blood_anim {
+    from {background: #FF0000;
+    	opacity: .8;
+    }
+    to {background: #FFA600;
+    	opacity: .4;
+    }
+}
+
+.egg1, .egg2, .egg3 {
+	position: absolute;
+	opacity: .8;
+	left: 197px;
+    display: block;
+    -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.egg1 {
+	top: 168px;
+    width: 12px;
+    height: 36px;
+}
+
+.egg2 {
+	top: 228px;
+    width: 14px;
+    height: 34px;
+}
+
+.egg3 {
+	top: 285px;
+    width: 16px;
+    height: 41px;
+}
+
 .wrapper {
 	height: 100vh;
 	width: 100%;
-	background: url(../img/bg-min.jpg) 30% 30% no-repeat;
+	background: url(../img/l2classic-min.jpg) 30% 30% no-repeat;
 	background-size: cover;
 	z-index: 1;
 	display: flex;
@@ -18,70 +78,89 @@ body {
 }
 
 h1 {
-	font-family: 'Tangerine', cursive;
-	font-size: 5.8em; 
-	color: rgb(211, 255, 255);
+	font-family: 'Condiment', cursive;
+	font-size: 9em;
+	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+	color: #FFC641;
 	text-shadow: 4px 4px 4px rgba(0, 0, 0, .8);
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    from {color: #FF3B0F;}
+    to {color: #FFC905;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    from {color: #FF3B0F;}
+    to {color: #FFC905;}
 }
 
 h1 span {
 	font-size: .8em;
 }
 
-.content {
-	margin: 0 auto;
-	background: rgba(255, 255, 255, .85);
-	width: 600px;
-	height: 200px;
+.buttons {
+	width: 700px;
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
-	border-radius: 10px;
-	-webkit-box-shadow: 14px 14px 19px 3px rgba(0,0,0,0.75);
-	-moz-box-shadow: 14px 14px 19px 3px rgba(0,0,0,0.75);
-	box-shadow: 14px 14px 19px 3px rgba(0,0,0,0.75);
 }
 
-.content:hover {
-	transform: scale(1.4);
-	transition: all 3s ease-in-out;
+.buttons a {
+	text-decoration: none;
+	animation-name: buttons_anim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+	color: #FFC641;
+	font-size: 1.7em;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, .8);
 }
 
-.name, .price_name, .skype_name {
-	padding-bottom: 20px;
-	font-weight: bold;
-	color: rgb(0, 44, 56);
-	text-shadow: 2px 2px 2px rgba(150, 150, 150, .5);
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes buttons_anim {
+    from {color: #0AFFFB;}
+    to {color: #1E61FF;}
 }
 
-.skype-user {
+/* Standard syntax */
+@keyframes buttons_anim {
+    from {color: #0AFFFB;}
+    to {color: #1E61FF;}
+}
+
+.discord, .forum {
+	height: 254px;
+	width: 254px;
+}
+
+.buttons__text {
+	padding-bottom: 80px;
+	text-align: center;
 	position: relative;
 }
 
-.skype-user img {
+.buttons__text img {
+	width: 36px;
 	position: absolute;
-	top: 1px;
-	left: -30px;
+	top: 50px;
+	left: 109px;
 }
 
-.skype-user:hover {
-	transform: scale(1.2);
-	transition: all .6s ease-in-out;
+.img_scale {
+	opacity: .6;
 }
 
-.skype a {
-	color: rgb(209, 27, 54);
-	text-decoration: none;
-}
-
-.skype a:hover {
-	color: red;
-	
-}
-
-.server_name, .addena, .skype-user {
-	color: rgb(209, 27, 54);
-	text-shadow: 2px 2px 2px rgba(150, 150, 150, .5);
+.img_scale:hover {
+	opacity: 1;
+	transform: scale(1.18);
+	transition: all .3s ease-in-out;
 }
 
 .hiden {
